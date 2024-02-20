@@ -8,11 +8,16 @@ input_image_small="./source/smallOutput.png"
 
 echo "Converting favicon.ico"
 convert $input_image_small  -bordercolor white -border 0 \
-      \( -clone 0 -resize 16x16 \) \
-      \( -clone 0 -resize 32x32 \) \
       \( -clone 0 -resize 48x48 \) \
-      \( -clone 0 -resize 64x64 \) \
       -delete 0 -alpha off -colors 256 $output_dir/favicon.ico
+
+# Add different sizes to favicon.ico
+# convert $input_image_small  -bordercolor white -border 0 \
+#       \( -clone 0 -resize 64x64 \) \
+#       \( -clone 0 -resize 48x48 \) \
+#       \( -clone 0 -resize 32x32 \) \
+#       \( -clone 0 -resize 16x16 \) \
+#       -delete 0 -alpha off -colors 256 $output_dir/favicon.ico
 
 # Input image file
 input_image_large="./source/largeOutput.png"
@@ -39,6 +44,10 @@ done
 
 echo "Converting to 192x192 - Output: $output_dir/android-icon-192x192.png"
 convert $input_image_large -resize 192x192 -alpha off $output_dir/android-icon-192x192.png
+
+
+echo "Converting to 512x512 - Output: $output_dir/android-icon-512x512.png"
+convert $input_image_large -resize 512x512 -alpha off $output_dir/android-icon-512x512.png
 
 
 echo "Converting to 16x16 - Output: $output_dir/favicon-16x16.png"
