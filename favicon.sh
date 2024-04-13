@@ -4,6 +4,8 @@
 output_dir="target"
 
 # Input image file
+input_image_svg="./source/large.svg"
+svgo -i $input_image_svg -o $output_dir/favicon.svg
 
 # Input image file
 input_image_large="./source/largeOutput.png"

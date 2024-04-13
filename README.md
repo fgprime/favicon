@@ -4,10 +4,20 @@
 
 ### MacOS
 
-Install imagemagick with SVG support based on package manager brew
+#### Install imagemagick with SVG support
+
+Using package manager brew
 
 ```bash
 brew install imagemagick librsvg
+```
+
+#### Install svgo to simplify
+
+Using package manager brew
+
+```bash
+brew install svgo
 ```
 
 ## Source images
